@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DID Certificate Issuance</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/keccak256@1.0.6/keccak256.min.js"></script>
+    <script defer src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>DID Certificate Issuance</h2>
+    <button id="connectBtn" onclick="connectWallet()"> Connect Wallet</button>
+    <p id="walletAddress">Wallet:NotConnected!</p>
+    <div id="did_display" hidden>
+      <p id="generated_did" hidden></p>
+      <div id="qrcode" hidden></div>
+    </div>
+    
+  <div id="issuerHidden" hidden>
+    <hr>
+    <h3>Issue Single Certificate</h3>
+    <label for="did">DID:</label>
+    <input type="text" id="did" placeholder="e.g. did:ethe:0x...." size="42"/>
+    <br/>
+    <br/>
+    <label for="course">Course Name:</label>
+    <input type="text" id="course" placeholder="e.g. Blockchain Development"/>
+    <br/>
+    <br/>
+    <button id="issueCert" onclick="issueCertificate()">Issue Certificate</button>
+    <p id="status"></p>
+
+    <h3>Submit Merkle Root</h3>
+      <input type="text" id="rootInput" placeholder="0x... (Merkle Root)" size="66" />
+      <input type="text" id="batchName" placeholder="Batch Name" />
+        <button onclick="submitRoot(document.getElementById('rootInput').value, document.getElementById('batchName').value)">
+          Submit Root
+        </button>
+    </div>
+
+  <div id="receptionHidden" hidden>
+    <hr>
+    <h3>View My Certificates</h3>
+    <button onclick="viewMyCertificates()">View</button>
+    <ul id="certList"></ul>
+
+    <h3>Verify Certificate with Merkle Proof</h3>
+    <input type="text" id="verifyDid" placeholder="did:ethr:0x..." size="42" />
+    <input type="text" id="verifyCourse" placeholder="Course Name" />
+    <input type="text" id="verifyRoot" placeholder="Merkle Root" size="66" />
+    <textarea id="verifyProof" placeholder='["0x...", "0x..."]' rows="4" cols="50"></textarea><br />
+    <button onclick="verifyCertificate()">Verify</button>
+    <p id="verifyResult"></p>
+  </div>
+</body>
+</html>
