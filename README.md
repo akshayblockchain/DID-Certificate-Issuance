@@ -31,13 +31,14 @@ A decentralized certificate issuance DApp that allows issuers to issue certifica
 
 ## 📂 Project Structure
 
+```bash
 did-cert-assignment/
 ├── contracts/
 │ └── DIDCertificate.sol # Smart contract
 ├── frontend/
 │ ├── index.html # DApp frontend
 │ └── app.js # JS logic with Ethers.js
-│ └── styles.css # CSS style  
+│ └── styles.css # CSS style
 ├── ignition/modules/
 │ └── DIDCertificateModule.js # Hardhat deploy script
 ├── sripts/
@@ -48,6 +49,7 @@ did-cert-assignment/
 ├── .env # Amoy RPC + private key (not committed)
 ├── hardhat.config.js # Network config
 └── README.md
+```
 
 ---
 
