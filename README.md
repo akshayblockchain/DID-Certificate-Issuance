@@ -156,9 +156,17 @@ did:ethr:0x9abcdef01234567890abcdefabcdef1234567890,Blockchain Fundamentals
 
 ## Screenshots
 
+HomePage
 ![No Image](screenshots/homePage.png)
+
+Metamask Login with Polygon Amoy
 ![No Image](screenshots/connectWallet.png)
 
+Issuer Login Page
 ![No Image](screenshots/IssuerLogin.png)
+
+Recepient Login Page View Function
 ![No Image](screenshots/RecepientLogin1.png)
+
+Recepient Login Page Verify Function
 ![No Image](screenshots/RecepientLogin2.png)
